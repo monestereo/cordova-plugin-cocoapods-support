@@ -127,6 +127,8 @@ module.exports = function (context) {
 
                 } else if (pod.path) {
                     entry += ", :path => '" + pod.path + "'";
+                } else if (pod.podspec) {
+                    entry += ", podspec:'" + pod.podspec + "'";
                 } else if (pod.subspecs) {
                     var specs = pod.subspec.split(',').map(function (spec) {
                         return "'" + spec.trim() + "'";
@@ -266,4 +268,3 @@ module.exports = function (context) {
     }
 
 };
-
